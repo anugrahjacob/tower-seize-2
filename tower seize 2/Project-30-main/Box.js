@@ -17,13 +17,22 @@ class Box {
   display(){
 
     if(this.body.speed<3){
-    push();
+    var angle=this.body.angle
+    var pos=this.body.position
+      push();
     translate(this.body.position.x, this.body.position.y);
+      rotate(angle)
     rectMode(CENTER);
     fill(995,95,19);
     rect(0, 0, this.width, this.height);
     pop();
   }
-
+else
+{
+World.remove(world,this.body)
+  push()
+  this.visiblity=this.visiblity=-5
+  pop()
+}
   }
 }
